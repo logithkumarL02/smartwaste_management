@@ -1,0 +1,33 @@
+{
+  "model_version": "efficientnetb0-v1",
+  "architecture": "EfficientNetB0",
+  "classes": 5,
+  "class_names": [
+    "glass",
+    "metal",
+    "other",
+    "paper_cardboard",
+    "plastic"
+  ],
+  "image_size": 224,
+  "trained_at": "2026-09-23T13:01:46.750594Z",
+  "dataset": "garythung/trashnet",
+  "dataset_paper": "Yang & Thung, Stanford CS229, 2016",
+  "test_accuracy": 0.8449,
+  "macro_f1": 0.7329,
+  "missing_categories": [
+    "organic",
+    "e_waste",
+    "textile"
+  ],
+  "confidence_threshold": 0.8,
+  "uncertain_threshold": 0.5,
+  "class_mapping_source": {
+    "glass": "glass",
+    "paper": "paper_cardboard",
+    "cardboard": "paper_cardboard",
+    "plastic": "plastic",
+    "metal": "metal",
+    "trash": "other"
+  }
+}

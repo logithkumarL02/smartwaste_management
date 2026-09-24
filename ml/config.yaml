@@ -1,0 +1,57 @@
+model:
+  architecture: EfficientNetB0
+  image_size: 224
+  batch_size: 32
+  epochs: 30
+  learning_rate: 0.0001
+  dropout: 0.3
+  freeze_backbone: true
+  unfreeze_after_epoch: 15
+  unfreeze_layers: 20
+
+augmentation:
+  enabled: true
+  rotation_range: 30
+  width_shift_range: 0.15
+  height_shift_range: 0.15
+  horizontal_flip: true
+  zoom_range: 0.2
+  brightness_range: [0.8, 1.2]
+  fill_mode: nearest
+
+inference:
+  confidence_threshold: 0.80
+  uncertain_threshold: 0.50
+  max_alternatives: 3
+
+dataset:
+  source: garythung/trashnet
+  train_split: 0.70
+  val_split: 0.13
+  test_split: 0.17
+  min_samples_per_class: 50
+  raw_dir: data/raw
+  prepared_dir: data/prepared
+  manifest_path: data/manifest.json
+
+output:
+  model_dir: model
+  model_filename: waste_classifier.keras
+  metadata_filename: metadata.json
+  evaluation_dir: evaluation
+
+# TrashNet class → SmartWaste category mapping
+class_mapping:
+  glass: glass
+  paper: paper_cardboard
+  cardboard: paper_cardboard
+  plastic: plastic
+  metal: metal
+  trash: other
+
+trained_categories:
+  - glass
+  - paper_cardboard
+  - plastic
+  - metal
+  - other

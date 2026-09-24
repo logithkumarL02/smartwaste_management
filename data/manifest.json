@@ -1,0 +1,47 @@
+{
+  "dataset_source": "garythung/trashnet",
+  "class_mapping": {
+    "glass": "glass",
+    "paper": "paper_cardboard",
+    "cardboard": "paper_cardboard",
+    "plastic": "plastic",
+    "metal": "metal",
+    "trash": "other"
+  },
+  "trained_categories": [
+    "paper_cardboard",
+    "glass",
+    "metal",
+    "plastic",
+    "other"
+  ],
+  "missing_categories": [
+    "organic",
+    "e_waste",
+    "textile"
+  ],
+  "splits": {
+    "train": {
+      "paper_cardboard": 1395,
+      "glass": 701,
+      "metal": 574,
+      "plastic": 674,
+      "other": 191
+    },
+    "val": {
+      "paper_cardboard": 259,
+      "glass": 130,
+      "metal": 106,
+      "plastic": 125,
+      "other": 35
+    },
+    "test": {
+      "paper_cardboard": 340,
+      "glass": 171,
+      "metal": 140,
+      "plastic": 165,
+      "other": 48
+    }
+  },
+  "total_images": 5054
+}
